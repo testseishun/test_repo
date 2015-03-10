@@ -1,13 +1,12 @@
 package pages.googlePages;
 
+import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.findby.FindBy;
 import net.thucydides.core.pages.WebElementFacade;
 import org.openqa.selenium.WebDriver;
 import pages.CommonPageObject;
 
-/**
- * Created by t.elizarova on 09.03.2015 (Moedelo.Ltd)).
- */
+@DefaultUrl("/")
 public class GooglePage extends CommonPageObject {
 
     private ServiceLoginPage serviceLoginPage;

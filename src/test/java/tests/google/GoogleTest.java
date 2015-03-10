@@ -1,3 +1,5 @@
+package tests.google;
+
 import net.thucydides.core.annotations.Steps;
 import org.junit.Test;
 import steps.GoogleSteps;
@@ -5,9 +7,6 @@ import tests.CommonGoogleTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-/**
- * Created by t.elizarova on 09.03.2015 (Moedelo.Ltd)).
- */
 public class GoogleTest extends CommonGoogleTest {
 
     private String login = "314526398test@gmail.com";
@@ -17,7 +16,7 @@ public class GoogleTest extends CommonGoogleTest {
     private GoogleSteps googleSteps;
 
     @Test
-    public void check_search_result() {
+    public void user_can_login_to_google_account() {
         googleSteps.enterToAccount(login, password);
 
         assertThat(googleSteps.isLoginSuccessful(login)).describedAs("Не смогли залогиниться").isTrue();
