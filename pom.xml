@@ -3,11 +3,9 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>testProject</groupId>
     <artifactId>testProject</artifactId>
     <version>1.0-SNAPSHOT</version>
-
     <properties>
         <project.java.version>1.8</project.java.version>
         <webdriver.driver>chrome</webdriver.driver>
@@ -54,8 +52,25 @@
             <artifactId>slf4j-simple</artifactId>
             <version>1.6.1</version>
         </dependency>
-       </dependencies>
-
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>net.thucydides.maven.plugins</groupId>
+                <artifactId>maven-thucydides-plugin</artifactId>
+                <version>${thucydides.version}</version>
+            </plugin>
+        </plugins>
+    </build>
     <profiles>
         <profile>
             <id>maven2</id>
@@ -64,15 +79,7 @@
                     <missing>${basedir}</missing>
                 </file>
             </activation>
-            <reporting>
-                <plugins>
-                    <plugin>
-                        <groupId>net.thucydides.maven.plugins</groupId>
-                        <artifactId>maven-thucydides-plugin</artifactId>
-                        <version>${thucydides.version}</version>
-                    </plugin>
-                </plugins>
-            </reporting>
         </profile>
     </profiles>
 </project>
+
